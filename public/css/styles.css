@@ -1,0 +1,121 @@
+html {
+    --s: 55px; /* control the size */
+    --b: 10px; /* control the thickness of the curved lines */
+    --color1: rgba(255,0,0, 1);
+    --color2: rgba(34,51,64, 1);
+    --color1a: rgba(255,0,0, .1);
+    --color2a: rgba(34,51,64, .1);
+
+    --_r: calc(1.28 * var(--s) + var(--b) / 2) at top 50%;
+    --_f: calc(99.5% - var(--b)), #F9F2E7 calc(101% - var(--b)) 99.5%, #0000 101%;
+    --_g0: calc(-.8 * var(--s)), var(--color1a) var(--_f);
+    --_g1: calc(-.8 * var(--s)), var(--color2a) var(--_f);
+    --_s: calc(1.8 * var(--s) + var(--b));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Arial Rounded MT Bold", sans-serif;
+    font-size: 120%;
+}
+
+h1 {
+    font-size: 5em;
+}
+
+.page-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    text-align: center;
+}
+
+p {
+    line-height: 1.4em;
+}
+
+.content-wrapper {
+    max-width: 50em;
+}
+
+main {
+    background: radial-gradient(var(--_r) right var(--_g0)) calc(-1 * var(--_s)) var(--s),
+    radial-gradient(var(--_r) left var(--_g1)) var(--_s) calc(-1 * var(--s)),
+    radial-gradient(var(--_r) right var(--_g1)) calc(var(--_s) / -2) calc(-1 * var(--s)),
+    radial-gradient(var(--_r) left var(--_g0)) calc(var(--_s) / 2) var(--s),
+    linear-gradient(90deg, var(--color1a) 50%, var(--color2a) 0);
+    background-size: var(--_s) calc(4 * var(--s));
+    background-attachment: fixed;
+}
+
+.deck-image {
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.deck-image--end {
+    text-align: center;
+    color: black;
+    text-shadow: 2px 2px 1px rgba(255,255,255, .8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    h2 {
+        font-size: 5em;
+        margin: 0;
+    }
+}
+
+.counter {
+    font-size: 1.3em;
+    padding: 0.5em 1em;
+    background-image: linear-gradient(90deg, white, transparent);
+    border-top: 5px solid var(--color1);
+}
+
+input[type='submit'] {
+    font-size: 2em;
+    padding: 1em;
+    border-radius: 0.25em;
+    background-color: white;
+    margin: 2em;
+    border-top: 0;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    border-left: 0;
+    color: var(--color1);
+}
+
+input[type='submit']:hover,
+input[type='submit']:active {
+    color: var(--color2);
+}
+
+.startover-link {
+    text-decoration: none;
+    color: var(--color1);
+    font-size: 2em;
+    padding: 1em;
+    border-radius: 0.25em;
+    background-color: white;
+    margin: 2em;
+    border-top: 0;
+    border-right: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    border-left: 0;
+}
+
+.startover-link:hover,
+.startover-link:active {
+    color: var(--color2);
+}

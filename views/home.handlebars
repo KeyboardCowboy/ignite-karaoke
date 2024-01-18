@@ -1,0 +1,19 @@
+{{> header }}
+
+<main class="page-main">
+    <section class="content-wrapper">
+    <h1>{{title}}</h1>
+
+    <p class="Instructions">
+        Select a directory containing image files on your computer and start the slideshow! Twenty images will be
+        randomly selected from your selection and you'll have 15 seconds to present each one.
+    </p>
+
+    <form action="/slideshow" method="post" enctype="multipart/form-data">
+        <input type="file" name="directory" accept="image/*" webkitdirectory directory multiple/><br>
+        <input type="submit" value="Start Slideshow!"/>
+    </form>
+    </section>
+</main>
+
+{{> footer }}

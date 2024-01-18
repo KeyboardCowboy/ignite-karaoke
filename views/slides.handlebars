@@ -1,0 +1,14 @@
+<main id="deck">
+    {{#each images}}
+        <article class="deck-image" style="background-image: url('/slides/{{ filename }}')">
+            <div class="counter">Slide #{{ addOne @index }}</div>
+        </article>
+    {{/each}}
+
+    <article class="deck-image deck-image--end">
+        <h2>The End</h2>
+        <a href="/" class="startover-link">Start Over</a>
+    </article>
+
+    <script type="text/javascript" src="/js/slideshow.js"></script>
+</main>

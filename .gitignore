@@ -1,0 +1,7 @@
+# IDE files
+.idea
+.config.codekit3
+
+# App files
+node_modules
+public/slides
